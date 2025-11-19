@@ -1,0 +1,62 @@
+name: Feature Request
+description: Suggest a new feature or enhancement for react-ambient-light
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new feature!
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Is your feature request related to a problem? Please describe.
+      placeholder: I'm always frustrated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see
+      placeholder: I would like to see...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Describe any alternative solutions or features you've considered
+      placeholder: I also thought about...
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example Usage
+      description: Show how you would use this feature
+      placeholder: |
+        ```tsx
+        <AmbientLight
+          src="image.jpg"
+          newFeature={true}
+        />
+        ```
+      render: tsx
+
+  - type: checkboxes
+    id: breaking
+    attributes:
+      label: Breaking Change
+      description: Would this be a breaking change?
+      options:
+        - label: This would be a breaking change
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or examples about the feature request here

@@ -1,0 +1,102 @@
+{
+  "name": "react-ambient-light",
+  "version": "0.0.1",
+  "description": "A React component that creates beautiful ambient light effects for images and videos with customizable glow, blur, and animations",
+  "author": "Aokaze <aokaze.cta@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "ambient-light",
+    "glow-effect",
+    "image-effect",
+    "video-effect",
+    "blur",
+    "react-component",
+    "ambient",
+    "glow",
+    "visual-effects",
+    "ui-component",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AokazeDev/react-ambient-light"
+  },
+  "homepage": "https://github.com/AokazeDev/react-ambient-light#readme",
+  "bugs": {
+    "url": "https://github.com/AokazeDev/react-ambient-light/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "changelog": "changelogithub",
+    "release": "bumpp --execute='pnpm run changelog' --all",
+    "release:check": "pnpm run lint && pnpm run format:check && pnpm run typecheck && pnpm run test && pnpm run build",
+    "prepublishOnly": "pnpm run build",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "bumpp": "^10.3.1",
+    "changelogithub": "^13.16.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.5.0",
+    "jsdom": "^27.2.0",
+    "prettier": "^3.6.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.47.0",
+    "vitest": "^4.0.10"
+  },
+  "engines": {
+    "node": ">=16.x",
+    "pnpm": ">=8.x"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

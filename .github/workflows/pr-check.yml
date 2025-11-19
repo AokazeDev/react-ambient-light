@@ -1,0 +1,50 @@
+name: PR Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate:
+    name: Validate PR
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'pnpm'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Build
+        run: pnpm build
+      
+      - name: Type check
+        run: pnpm typecheck
+      
+      - name: Lint
+        run: pnpm lint
+      
+      - name: Format check
+        run: pnpm format:check
+      
+      - name: Run tests
+        run: pnpm test
+      
+      - name: Check bundle size
+        run: |
+          if [ -d "dist" ]; then
+            echo "## Bundle Size" >> $GITHUB_STEP_SUMMARY
+            du -sh dist/* | awk '{print "- " $2 ": " $1}' >> $GITHUB_STEP_SUMMARY
+          fi

@@ -1,0 +1,110 @@
+name: Bug Report
+description: Report a bug or issue with react-ambient-light
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Import component '...'
+        2. Set props '....'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: I expected...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: Instead...
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Code Example
+      description: Please provide a minimal code example that reproduces the issue
+      placeholder: |
+        ```tsx
+        import { AmbientLight } from 'react-ambient-light';
+        
+        // Your code here
+        ```
+      render: tsx
+
+  - type: input
+    id: version
+    attributes:
+      label: react-ambient-light Version
+      description: Which version are you using?
+      placeholder: "0.0.1"
+    validations:
+      required: true
+
+  - type: input
+    id: react-version
+    attributes:
+      label: React Version
+      description: Which React version are you using?
+      placeholder: "18.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser(s) are you experiencing this issue on?
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        Please provide any additional environment details
+      placeholder: |
+        - OS: [e.g. macOS, Windows, Linux]
+        - Node version: [e.g. 18.0.0]
+        - Package manager: [e.g. npm, pnpm, yarn]
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: Any additional information that might help...
