@@ -6,7 +6,7 @@ import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import prettierConfig from 'eslint-config-prettier';
 import globals from 'globals';
 
-export default tseslint.config(
+export default [
   // Archivos a ignorar
   {
     ignores: [
@@ -31,7 +31,6 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      parser: tseslint.parser,
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -44,6 +43,7 @@ export default tseslint.config(
       },
     },
     plugins: {
+      '@typescript-eslint': tseslint.plugin,
       react: reactPlugin,
     },
     rules: {
@@ -94,6 +94,5 @@ export default tseslint.config(
     },
   },
 
-  // Deshabilitar reglas que entran en conflicto con Prettier (debe ir al final)
-  prettierConfig
-);
+  prettierConfig,
+];

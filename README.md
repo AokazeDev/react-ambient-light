@@ -8,8 +8,6 @@
   A React component that creates beautiful ambient light effects for images and videos with customizable glow, blur, and scale options.<br><br>
 </p>
 
-
-
 ## Installation
 
 ```bash
@@ -114,11 +112,7 @@ import { useDominantColor } from 'react-ambient-light';
 function ColorDisplay() {
   const color = useDominantColor('https://example.com/image.jpg');
 
-  return (
-    <div style={{ backgroundColor: color, padding: '20px' }}>
-      Dominant color: {color}
-    </div>
-  );
+  return <div style={{ backgroundColor: color, padding: '20px' }}>Dominant color: {color}</div>;
 }
 ```
 
@@ -128,28 +122,28 @@ function ColorDisplay() {
 
 #### Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `src` | `string` | **required** | URL of the image or video |
-| `type` | `'image' \| 'video'` | `'image'` | Type of content |
-| `blur` | `number` | `40` | Blur intensity of the glow (in pixels) |
-| `scale` | `number` | `1.1` | Scale factor for the glow expansion |
-| `opacity` | `number` | `0.6` | Opacity of the glow (0 to 1) |
-| `className` | `string` | `''` | Custom CSS class for the container |
-| `style` | `CSSProperties` | `{}` | Custom inline styles for the container |
-| `children` | `ReactNode` | `undefined` | Optional content to overlay on top |
-| `alt` | `string` | `'Content'` | Alternative text for the image |
-| `onLoad` | `() => void` | `undefined` | Callback when the image/video loads |
-| `onError` | `() => void` | `undefined` | Callback when there's an error loading |
+| Prop        | Type                 | Default      | Description                            |
+| ----------- | -------------------- | ------------ | -------------------------------------- |
+| `src`       | `string`             | **required** | URL of the image or video              |
+| `type`      | `'image' \| 'video'` | `'image'`    | Type of content                        |
+| `blur`      | `number`             | `40`         | Blur intensity of the glow (in pixels) |
+| `scale`     | `number`             | `1.1`        | Scale factor for the glow expansion    |
+| `opacity`   | `number`             | `0.6`        | Opacity of the glow (0 to 1)           |
+| `className` | `string`             | `''`         | Custom CSS class for the container     |
+| `style`     | `CSSProperties`      | `{}`         | Custom inline styles for the container |
+| `children`  | `ReactNode`          | `undefined`  | Optional content to overlay on top     |
+| `alt`       | `string`             | `'Content'`  | Alternative text for the image         |
+| `onLoad`    | `() => void`         | `undefined`  | Callback when the image/video loads    |
+| `onError`   | `() => void`         | `undefined`  | Callback when there's an error loading |
 
 #### Video-specific Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `videoAutoPlay` | `boolean` | `true` | Enable autoplay for videos |
-| `videoControls` | `boolean` | `false` | Show video controls |
-| `videoLoop` | `boolean` | `true` | Loop the video |
-| `videoMuted` | `boolean` | `true` (when autoPlay is true) | Mute the video |
+| Prop            | Type      | Default                        | Description                |
+| --------------- | --------- | ------------------------------ | -------------------------- |
+| `videoAutoPlay` | `boolean` | `true`                         | Enable autoplay for videos |
+| `videoControls` | `boolean` | `false`                        | Show video controls        |
+| `videoLoop`     | `boolean` | `true`                         | Loop the video             |
+| `videoMuted`    | `boolean` | `true` (when autoPlay is true) | Mute the video             |
 
 ### useDominantColor Hook
 
@@ -160,9 +154,11 @@ const color = useDominantColor(imageSrc: string): string
 ```
 
 **Parameters:**
+
 - `imageSrc` (string): URL of the image
 
 **Returns:**
+
 - `string`: RGB color value (e.g., `'rgb(255, 128, 64)'`)
 
 ## Examples
@@ -200,13 +196,7 @@ const color = useDominantColor(imageSrc: string): string
 ### Image Gallery Card
 
 ```tsx
-<AmbientLight
-  src="artwork.jpg"
-  blur={45}
-  scale={1.2}
-  opacity={0.5}
-  className="gallery-card"
->
+<AmbientLight src="artwork.jpg" blur={45} scale={1.2} opacity={0.5} className="gallery-card">
   <div className="card-overlay">
     <h3>Artwork Title</h3>
     <p>Artist Name</p>
